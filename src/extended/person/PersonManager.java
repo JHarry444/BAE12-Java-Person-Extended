@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class PersonManager {
 
-	public ArrayList<Person> people = new ArrayList<>();
+	private ArrayList<Person> people = new ArrayList<>();
 
 	public void addPerson(Person person) {
 		this.people.add(person);
@@ -16,7 +16,7 @@ public class PersonManager {
 
 	public Person findByName(String name) {
 		for (Person person : this.people) {
-			if (person.name == name) {
+			if (person.getName() == name) {
 				return person;
 			}
 		}

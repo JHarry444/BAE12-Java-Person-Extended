@@ -2,21 +2,18 @@ package extended.person;
 
 import java.util.ArrayList;
 
-import extended.pets.Cat;
-import extended.pets.Dog;
+import extended.pets.Pet;
 
 public class Person {
 
 	// Attributes - what it has
-	public String name;
+	private String name;
 
-	public int age;
+	private int age;
 
-	public String jobTitle;
+	private String jobTitle;
 
-	public ArrayList<Cat> cats = new ArrayList<>();
-
-	public ArrayList<Dog> dogs = new ArrayList<>();
+	private ArrayList<Pet> pets = new ArrayList<>();
 
 	public Person(String name, int age, String jobTitle) {
 		super();
@@ -31,25 +28,12 @@ public class Person {
 
 	// Behaviours - What it does
 
-	public void addCat(Cat cat) {
-		this.cats.add(cat);
+	public void addPet(Pet pet) {
+		this.pets.add(pet);
 	}
 
-	// BAD - breaks if we change the Cat constructor
-	public void addCat(String name, int age, String colour) {
-		this.cats.add(new Cat(name, age, colour));
-	}
-
-	public void removeCat(Cat cat) {
-		this.cats.remove(cat);
-	}
-
-	public void addDog(Dog dog) {
-		this.dogs.add(dog);
-	}
-
-	public void removeDog(Dog dog) {
-		this.dogs.remove(dog);
+	public void removePet(Pet pet) {
+		this.pets.remove(pet);
 	}
 
 	public void print() {
@@ -59,18 +43,43 @@ public class Person {
 		System.out.println(this.age);
 		System.out.println("Job Title: ");
 		System.out.println(this.jobTitle);
-
-		System.out.println("Cats: [");
-		for (Cat cat : this.cats) {
-			cat.print();
+		System.out.println("Pets: [");
+		for (Pet pet : this.pets) {
+			pet.print();
 		}
 		System.out.println("]");
+	}
 
-		System.out.println("Dogs: [");
-		for (Dog dog : this.dogs) {
-			dog.print();
-		}
-		System.out.println("]");
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getJobTitle() {
+		return jobTitle;
+	}
+
+	public void setJobTitle(String jobTitle) {
+		this.jobTitle = jobTitle;
+	}
+
+	public ArrayList<Pet> getPets() {
+		return pets;
+	}
+
+	public void setPets(ArrayList<Pet> pets) {
+		this.pets = pets;
 	}
 
 }
