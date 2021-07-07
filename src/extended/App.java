@@ -30,13 +30,25 @@ public class App {
 			pet.speak();
 		}
 
-		Person found = manager.findByName("Barry");
+		Person found = manager.findByName("JH");
 
 		if (found != null) {
-			found.print();
+			System.out.println(found);
 		} else {
 			System.out.println("Trainer doesn't exist with that name");
 		}
+
+		String foundAsString = String.valueOf(found);
+
+		System.out.println(foundAsString);
+
+		Dog dog1 = new Dog("Brutus", 6, "Black");
+		Dog dog2 = new Dog("Brutus", 6, "Black");
+
+		System.out.println(dog1 == dog2);
+		System.out.println(dog1.equals(dog2));
+
+		System.out.println("abc".equals("abc"));
 	}
 
 }

@@ -36,18 +36,23 @@ public class Person {
 		this.pets.remove(pet);
 	}
 
-	public void print() {
-		System.out.println("Name: ");
-		System.out.println(this.name);
-		System.out.println("Age: ");
-		System.out.println(this.age);
-		System.out.println("Job Title: ");
-		System.out.println(this.jobTitle);
-		System.out.println("Pets: [");
-		for (Pet pet : this.pets) {
-			pet.print();
-		}
-		System.out.println("]");
+//	public void print() {
+//		System.out.println("Name: ");
+//		System.out.println(this.name);
+//		System.out.println("Age: ");
+//		System.out.println(this.age);
+//		System.out.println("Job Title: ");
+//		System.out.println(this.jobTitle);
+//		System.out.println("Pets: [");
+//		for (Pet pet : this.pets) {
+//			pet.print();
+//		}
+//		System.out.println("]");
+//	}
+
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ",\n age=" + age + ",\n jobTitle=" + jobTitle + ",\n pets=" + pets + "]";
 	}
 
 	public String getName() {
