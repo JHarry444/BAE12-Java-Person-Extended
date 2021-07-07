@@ -23,12 +23,9 @@ public class PersonManager {
 		return null;
 	}
 
-	public void print() {
-		System.out.println("Manager: ");
-		System.out.println("People: [");
-		for (Person p : this.people) {
-			p.print();
-		}
-		System.out.println("]");
+	@Override
+	public String toString() {
+		return "PersonManager [people=" + people + "]";
 	}
+
 }
