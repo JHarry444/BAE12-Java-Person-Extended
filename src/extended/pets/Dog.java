@@ -10,4 +10,8 @@ public class Dog extends Pet {
 	public void speak() {
 		System.out.println("Woof");
 	}
+
+	public void fetch() {
+		System.out.println("Stop trying to make fetch happen");
+	}
 }

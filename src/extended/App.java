@@ -1,5 +1,13 @@
 package extended;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
 import extended.person.Person;
 import extended.person.PersonManager;
 import extended.person.Snake;
@@ -49,6 +57,64 @@ public class App {
 		System.out.println(dog1.equals(dog2));
 
 		System.out.println("abc".equals("abc"));
+
+		System.out.println(new String("abc") == new String("abc"));
+
+		Pet p = new Dog("Barry", 12, "Blonde");
+
+		p.speak();
+
+		((Dog) p).fetch();
+
+		List<String> words = new ArrayList<>();
+
+		Set<Pet> pets = new HashSet<>();
+		pets.add(new Dog("Fido", 12, "Brindle"));
+		pets.add(new Dog("Fido", 12, "Brindle"));
+
+		System.out.println("SET OF PETS:");
+		System.out.println(pets);
+
+		for (Pet pet : pets) {
+			if ("Fido".equals(pet.getName())) {
+				System.out.println("FOUND IT: " + pet);
+			}
+		}
+
+		System.out.println("IT'S MAP TIME");
+		Map<Integer, Pet> petMap = new HashMap<>();
+
+		petMap.put(27, new Dog("Rex", 6, "Brown"));
+		petMap.put(27, new Dog("Fido", 12, "Brindle"));
+		petMap.putIfAbsent(27, new Cat(null, 0, null));
+
+		System.out.println(petMap);
+
+		Map<String, Pet> petMap2 = new HashMap<>();
+
+		petMap2.put("Dog1", new Dog("Rex", 6, "Brown"));
+		petMap2.put("Dog2", new Dog("Fido", 12, "Brindle"));
+
+		System.out.println("KEYS: " + petMap2.keySet());
+		System.out.println("ENTRIES: " + petMap2.entrySet());
+
+		System.out.println("ITERATE THROUGH KEYSET:");
+		for (String key : petMap2.keySet()) {
+			System.out.println("KEY: " + key + " VALUE: " + petMap2.get(key));
+		}
+		System.out.println("ITERATE THROUGH ENTRYSET:");
+		for (Entry<String, Pet> petEntry : petMap2.entrySet()) {
+			System.out.println("KEY: " + petEntry.getKey() + " VALUE: " + petEntry.getValue());
+		}
+
+		System.out.println("ITERATE THROUGH VALUES:");
+
+		for (Pet petValue : petMap2.values()) {
+			System.out.println("VALUE: " + petValue);
+		}
+		petMap2.remove("Dog1");
+
+		System.out.println(petMap2);
 	}
 
 }
