@@ -1,6 +1,4 @@
-package extended.person;
-
-import extended.pets.Pet;
+package extended.pets;
 
 public class Snake extends Pet {
 

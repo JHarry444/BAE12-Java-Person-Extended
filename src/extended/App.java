@@ -10,10 +10,11 @@ import java.util.Set;
 
 import extended.person.Person;
 import extended.person.PersonManager;
-import extended.person.Snake;
+import extended.person.PersonNotFoundException;
 import extended.pets.Cat;
 import extended.pets.Dog;
 import extended.pets.Pet;
+import extended.pets.Snake;
 
 public class App {
 
@@ -115,6 +116,15 @@ public class App {
 		petMap2.remove("Dog1");
 
 		System.out.println(petMap2);
+
+		try {
+			manager.findByName("Tiddles");
+		} catch (PersonNotFoundException pnfe) {
+			System.out.println(pnfe.getMessage());
+		}
+
+		System.out.println("hello");
+
 	}
 
 }

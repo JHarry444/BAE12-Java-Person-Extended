@@ -20,7 +20,7 @@ public class PersonManager {
 				return person;
 			}
 		}
-		return null;
+		throw new PersonNotFoundException("No person called " + name + " found in the list.");
 	}
 
 	@Override
